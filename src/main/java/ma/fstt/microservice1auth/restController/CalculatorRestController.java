@@ -1,4 +1,4 @@
-package ma.fstt.microservice1.restController;
+package ma.fstt.microservice1auth.restController;
 
 
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +17,6 @@ public class CalculatorRestController {
     @GetMapping("/{msg}")
     public String Service1(@PathVariable String msg){
 
-        return "Microservice 1 : "+ msg;
+        return "Microservice 1 AFTER DOCKERFILE : "+ msg;
     }
 }
