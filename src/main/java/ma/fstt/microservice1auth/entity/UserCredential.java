@@ -46,8 +46,7 @@ public class UserCredential {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String email;
-
-private String password;
+    private String password;
 
     public void setemail(String email) {
         this.email=email;
