@@ -7,10 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan("ma.fstt.microservice1auth.restController")
+
 public class Microservice1AuthApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Microservice1AuthApplication.class, args);
     }
 
