@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         // Define any environment variables needed for the pipeline
-        IMAGE_NAME = 'server-gateway'
-        CONTAINER_NAME = 'server-gateway-container'
+        IMAGE_NAME = 'microservice1-auth'
+        CONTAINER_NAME = 'microservice1-auth-container'
         DOCKERHUB_CREDENTIALS = credentials('dockerhub_amina')
     }
     stages {
