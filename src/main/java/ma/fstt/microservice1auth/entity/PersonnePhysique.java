@@ -17,11 +17,12 @@ public class PersonnePhysique extends UserCredential {
     private String dateNaissance;
 
     private String adresse;
-    private String CIN;
+    private String cin;
     private String numPermis;
 
-    public void setCIN(String CIN) {
-        this.CIN = CIN;
+    public void setcin(String cin)
+    {
+        this.cin = cin;
     }
     public void setnumPermis(String numPermis) {
         this.numPermis = numPermis;

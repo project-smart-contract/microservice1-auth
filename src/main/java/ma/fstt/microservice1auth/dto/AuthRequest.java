@@ -17,7 +17,7 @@ public class AuthRequest {
     private String numSocie;
     private String userType;
     private String numPermis;
-    private String CIN;
+    private String cin;
     private String adresse;
     private String email;
     private String dateNaissance;
@@ -53,8 +53,8 @@ public class AuthRequest {
         return this.numPermis;
     }
 
-    public String getCIN() {
-        return this.CIN;
+    public String getcin() {
+        return this.cin;
     }
 
     public String getAdresse() {
@@ -68,5 +68,5 @@ public class AuthRequest {
     public String getDateNaissance() {
         return this.dateNaissance;
     }
-    // Add other fields and their getters similarly
+
 }
