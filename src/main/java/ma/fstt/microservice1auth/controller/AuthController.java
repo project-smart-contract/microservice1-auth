@@ -29,14 +29,14 @@ public class AuthController {
 
         if ("MORALE".equals(user.getUserType())) {
             PersonneMorale personneMorale = new PersonneMorale();
-            // Définissez les champs spécifiques à PersonneMorale
+
             personneMorale.setNomSoc(user.getNomSoc());
             personneMorale.setNumSocie(user.getNumSocie());
 
             userCredential = personneMorale;
         } else if ("PHYSIQUE".equals(user.getUserType())) {
             PersonnePhysique personnePhysique = new PersonnePhysique();
-            // Définissez les champs spécifiques à PersonnePhysique
+            
             personnePhysique.setNom(user.getNom());
             personnePhysique.setPrenom(user.getPrenom());
             personnePhysique.setNumeroTelephone(user.getNumeroTelephone());
@@ -52,20 +52,16 @@ public class AuthController {
         }
 
 
-        // Définissez les champs communs
+
         userCredential.setemail(user.getEmail());
         userCredential.setPassword(user.getPassword());
 
-        // Enregistrez l'utilisateur et vérifiez si l'enregistrement a réussi
+
         String savedUser = service.saveUser(userCredential);
         if (savedUser == null) {
             return new ResponseEntity<>("Failed to add user", HttpStatus.BAD_REQUEST);
         }
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "User registered successfully");
-        response.put("CIN", user.getcin());
-
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
 
 
     }
