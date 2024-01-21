@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ma.fstt.microservice1auth.dto.AuthRequest;
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 @RestController
@@ -57,11 +56,11 @@ public class AuthController {
         userCredential.setPassword(user.getPassword());
 
 
-        String savedUser = service.saveUser(userCredential);
+        String savedUser = String.valueOf(service.saveUser(userCredential));
         if (savedUser == null) {
             return new ResponseEntity<>("Failed to add user", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>(userCredential, HttpStatus.CREATED);
 
 
     }
