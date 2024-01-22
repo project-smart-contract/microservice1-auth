@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice3-admin-formules
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice1-auth
+  template:
+    metadata:
+      labels:
+        app: microservice1-auth
+    spec:
+      containers:
+        - name: microservice1-auth
+          image: aminabakkali/microservice1-auth
+          ports:
+            - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice1-auth
+spec:
+  type: LoadBalancer
+  selector:
+    app: microservice1-auth
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8082
